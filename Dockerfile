@@ -15,5 +15,6 @@ RUN cd intest && ../inweb/Tangled/inweb -prototype intest.mkscript -makefile mak
 
 COPY . .
 
+RUN sed -i 's|inweb/Materials/platforms|Materials/platforms|' scripts/first.sh
 RUN cmake .
 RUN make
