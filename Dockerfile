@@ -17,7 +17,9 @@ COPY . .
 
 RUN mkdir -p inform7/Tangled
 RUN mkdir -p inbuild/Tangled
+RUN chmod +x /app/inweb/scripts/first.sh
 RUN bash -c "cd /app/inweb && ./scripts/first.sh linux"
+RUN chmod +x /app/intest/scripts/first.sh
 RUN bash -c "cd /app/intest && ./scripts/first.sh"
 RUN bash scripts/first.sh
 RUN cmake .
