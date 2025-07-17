@@ -8,10 +8,10 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 RUN git clone https://github.com/ganelson/inweb.git
-RUN cd inweb && make
+RUN cd inweb && cc -o inweb-c inweb.c && ./inweb-c -prototype inweb.mkscript -makefile makefile && make
 
 RUN git clone https://github.com/ganelson/intest.git
-RUN cd intest && make
+RUN cd intest && ../inweb/inweb -prototype intest.mkscript -makefile makefile && make
 
 COPY . .
 
