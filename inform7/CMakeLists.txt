@@ -1,0 +1,56 @@
+add_executable(inform7 Tangled/inform7.c)
+
+target_include_directories(inform7 PUBLIC
+    "${CMAKE_CURRENT_SOURCE_DIR}/.."
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/words-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/syntax-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/html-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/arch-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/inflections-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/lexicon-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/linguistics-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/problems-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/kinds-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../services/calculus-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/core-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/assertions-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/knowledge-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/imperative-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/runtime-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/values-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/if-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/multimedia-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../inter/bytecode-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../inter/building-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../inter/pipeline-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../inter/final-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../inter/index-module"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../inbuild/supervisor-module"
+)
+
+target_link_libraries(inform7
+    words-module
+    syntax-module
+    html-module
+    arch-module
+    inflections-module
+    lexicon-module
+    linguistics-module
+    problems-module
+    kinds-module
+    calculus-module
+    core-module
+    assertions-module
+    knowledge-module
+    imperative-module
+    runtime-module
+    values-module
+    if-module
+    multimedia-module
+    bytecode-module
+    building-module
+    pipeline-module
+    final-module
+    index-module
+    supervisor-module
+)
