@@ -7,8 +7,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-RUN git clone https://github.com/ganelson/inweb.git
-RUN ls -R inweb/Materials/platforms
+RUN git clone -b r7.2 https://github.com/ganelson/inweb.git
 RUN cd inweb && bash scripts/first.sh linux
 
 RUN git clone https://github.com/ganelson/intest.git
