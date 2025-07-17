@@ -15,10 +15,10 @@ RUN bash intest/scripts/first.sh
 
 COPY . .
 
-RUN sed -i 's|inweb/Materials/platforms|Materials/platforms|' scripts/first.sh
 RUN mkdir -p inform7/Tangled
 RUN mkdir -p inbuild/Tangled
-RUN /usr/local/bin/inweb -d -o inform7/Tangled/inform7.c inform7/Contents.w
-RUN /usr/local/bin/inweb -d -o inbuild/Tangled/inbuild.c inbuild/Contents.w
+RUN bash -c "cd /app/inweb && ./scripts/first.sh linux"
+RUN bash -c "cd /app/intest && ./scripts/first.sh"
+RUN bash scripts/first.sh
 RUN cmake .
 RUN make
