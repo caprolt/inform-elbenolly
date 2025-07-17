@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 RUN git clone https://github.com/ganelson/inweb.git
+RUN ls -R inweb/Materials/platforms
 RUN cd inweb && bash scripts/first.sh linux
 
 RUN git clone https://github.com/ganelson/intest.git
