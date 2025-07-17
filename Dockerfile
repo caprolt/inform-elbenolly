@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 RUN git clone https://github.com/ganelson/inweb.git
-RUN cd inweb && bash scripts/first.sh unix
+RUN cd inweb && bash scripts/first.sh linux
 
 RUN git clone https://github.com/ganelson/intest.git
 RUN cd intest && ../inweb/Tangled/inweb -prototype intest.mkscript -makefile makefile && make
